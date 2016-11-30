@@ -16,10 +16,10 @@ function searchCountries() {
 function showCountriesList(resp) {
 	countriesList.empty();
 	resp.forEach(function(item){ 
-	var url2= 'http://www.geognos.com/api/en/countries/flag/' + item.alpha2Code + '.png';
+	var flagUrl= 'http://www.geognos.com/api/en/countries/flag/' + item.alpha2Code + '.png';
 	$('<div class="list">').appendTo(countriesList)
 		.append($('<h3>').text(item.name))
-		.append($('<div class="flag">').css("background-image", "url(" + url2 + ")"))
+		.append($('<img class="flag" src=' + flagUrl + '>'))
 		.append($('<p>').text('Capital: ' + item.capital))
 		.append($('<p>').text('Region: ' + item.region))
 		.append($('<p>').text('Population: ' + item.population))
